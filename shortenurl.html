@@ -1,4 +1,4 @@
-<script src="https://cdn.rawgit.com/KecohInfo/Emoji/66c05889/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,700,500i,900"/>
 <style>
 body{margin:0;padding:0;font-family:Roboto,Arial,sans-serif}
@@ -166,7 +166,7 @@ function makeShort() {
     request.execute(function(response) {
         if (response.id != null) {
             str = "";
-            str += "<button class='btn' data-clipboard-snippet><a class='fas fa-paste' alt='Copy to clipboard' /></button><div id='foo'>"+ response.id +"</div>";
+            str += "<button class='btn' data-clipboard-snippet><img class='clippy' width='13' src='https://firebasestorage.googleapis.com/v0/b/kompijs.appspot.com/o/image%2Fclippy.svg?alt=media&token=ded490f4-41c8-4fb6-a52a-0f078167d21b' alt='Copy to clipboard'></button><div id='foo'>"+ response.id +"</div>";
             document.getElementById("output").innerHTML = str;
         } else {
             alert("ERROR: creating short url \n" + response.error);
