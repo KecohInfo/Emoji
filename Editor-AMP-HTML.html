@@ -1,0 +1,405 @@
+<html>
+<head>
+<title>AMP editor html by Kecoh.Info</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+
+<style>
+body {
+    background: linear-gradient(to right, rgba(3,137,255,0.05), rgba(13,211,255,0.05));
+    color: #555555;
+    font-family: 'Roboto Slab',Arial,Helvetica,Sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+  }
+  #outer-wrapper {
+    width: 100%;
+    margin: 0 auto 0;
+    padding: 0;
+    text-align: left;
+    max-width: 1006px;
+}
+.container{position:relative;margin-left:auto;margin-right:auto;padding-right:15px;padding-left:15px; overflow: hidden;}@media (min-width:576px){.container{padding-right:15px;padding-left:15px}}@media (min-width:768px){.container{padding-right:15px;padding-left:15px}}@media (min-width:992px){.container{padding-right:15px;padding-left:15px}}@media (min-width:1200px){.container{padding-right:15px;padding-left:15px}}@media (min-width:576px){.container{width:540px;max-width:100%}}@media (min-width:768px){.container{width:720px;max-width:100%}}@media (min-width:992px){.container{width:960px;max-width:100%}}@media (min-width:1200px){.container{width:1140px;max-width:100%}}
+
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    text-align: center;
+    color: #fff;
+    background-color: cornflowerblue;
+    box-sizing: border-box;
+    /* padding: 2px 6px 3px; */
+    border-width: 0px;
+    border-style: none;
+    border-color: blue;
+    border-image: initial;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+    margin-bottom: 6px;
+    cursor: pointer;
+}  
+  
+.txt-1   {
+    background: brown;
+    color: aliceblue;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+}
+  .txt-2 {
+    padding: 10px 0;
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+}
+  a {
+    text-decoration: none;
+    color: currentColor;
+}
+  table {
+    margin-bottom: 6px;
+}
+  
+  input {
+    text-align: center;
+    color: #fff;
+    background-color: cornflowerblue;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 0px;
+    border-style: none;
+    border-color: blue;
+    border-image: initial;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+  </style>
+</head>
+<body>
+
+<div id="outer-wrapper">
+  
+ <div class="container"> 
+                
+<center>
+    <h1 class="txt-1">Editor AMP html</h1>
+</center>
+<hr>
+<p>Un editor de <a href="https://www.ampproject.org/">AMP HTML</a> escrito en JavaScript basado en el editor original HTMLjive de 1996 </p>
+<hr>
+
+<form method="post" action="">
+<script language="JavaScript">
+modeindex = 2 // ...0=simple, 1=sample, 2=prompt
+helpon = false  // ...true or false
+function HjReset (form) {                // ...required because RESET does not reset values, just GUI
+              helpon = false
+               modeindex = 2
+               form.TEXT.value = ""
+}
+
+function HTMLtag (buttonname, insertmode, inserttext, tagstart, tagmiddle, tagend, sampletext, sampletext2, helptext) {
+  // ...this fuction defines the object HTMLtag
+  this.buttonname = buttonname
+  this.insertmode = insertmode
+    // ...1=none 2=standard input 3=lists (UL and OL) 4=DL list 5=anchor
+  this.inserttext = inserttext  // ...prompt when asking for insert text
+  this.tagstart   = tagstart
+  this.tagmiddle  = tagmiddle
+  this.tagend     = tagend
+  this.sampletext = sampletext  // ...sample text placed between tags in TextArea
+  this.sampletext2= sampletext2
+  this.helptext   = helptext
+}
+
+jStart = new HTMLtag ("Start", 5, "Ingres el título (ejemplo, Mi página AMP HTML)", '<!doctype html><HTML amp lang="en"><HEAD><META charset="utf-8"><TITLE>', '</TITLE><LINK rel="canonical" href="', '" /><META name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><STYLE>body {opacity: 0}</STYLE><noscript><STYLE>body {opacity: 1}</STYLE></noscript><SCRIPT async src="https://cdn.ampproject.org/v0.js"><\/SCRIPT></HEAD><BODY>',"Mi página AMP HTML", "https://www.ayudadeblogger.com/amp/","Ingrese el título seguido de la URL cononical (ejemplo, https://www.ayudadeblogger.com//amp/)" )
+jStart.inserttext2 = "Ingrese la URL canonical (ejemplo., https://www.ayudadeblogger.com/amp/)"
+
+
+jEnd = new HTMLtag ( "End", "1", "", " </BODY></HTML>", "", "",
+  "", "" ,
+  "This puts in the closing tags when your document is complete." )
+jStrong = new HTMLtag ( "STRONG", "2", "Enter the text with STRONG importance", " <strong>", "", "</strong>",
+  "This will be strong, usually in bold", "" ,
+  "The text placed between the <STRONG> and the </STRONG> will be STRONG importance" )
+jEm = new HTMLtag ( "EM", "2", "Enter the text to be EMPHASISED", " <em>", "", "</em>",
+  "This will be emphasised, usually in italics", "" ,
+  "The text placed between the <EM> and the </EM> will be EMPHASISED" )
+jPre = new HTMLtag ( "PRE", "2", "Enter the text to be PREformatted", " <pre>", "", "</pre>",
+  "This will be PREformatted", "" ,
+  "The text placed between the <PRE> and the </PRE> will be PREformatted" )
+jPara = new HTMLtag ( "P", "2", "Enter the text for a PARAGRAPH", " <p>", "", "</p>",
+  "Start of a PARAGRAPH that continues until the start of next PARAGRAPH.", "" ,
+  "The text placed after the <P> will be a separate PARAGRAPH until the next <P>" )
+jBreak = new HTMLtag ( "BR", "1", "", " <BR>", "", "",
+  "", "" ,
+  "This tag forces a line break, start of the next line." )
+jRule = new HTMLtag ( "HR", "1", "", " <HR>", "", "",
+  "", "" ,
+  "This tag puts a (horizontal rule) line on the page." )
+jH1 = new HTMLtag ( "H1", "2", "Enter the text for the HEADLINE", " <h1>", "", "</h1>",
+  "This will be a top level HEADLINE", "" ,
+  "The text placed between the <H1> and the </H1> will be the HEADLINE." )
+jH2 = new HTMLtag ( "H2", "2", "Enter the text for the HEADLINE", " <h2>", "", "</h2>",
+  "This will be a next to top level HEADLINE", "" ,
+  "The text placed between the <H2> and the </H2> will be the HEADLINE." )
+jH3 = new HTMLtag ( "H3", "2", "Enter the text for the HEADLINE", " <h3>", "", "</h3>",
+  "This will be a third from top level HEADLINE", "" ,
+  "The text placed between the <H3> and the </H3> will be the HEADLINE." )
+jCenter = new HTMLtag ( "Center", "2", "Enter the text to be CENTERED", " <center>", "", "</center>",
+  "This will be a CENTERED", "" ,
+  "The text placed between the <CENTER> and the </CENTER> will be the CENTERED." )
+jOL = new HTMLtag ( "OL", "3", "Enter FIRST item for (Numbered) ORDERED LIST", " <ol><li> ", "</li><li> ", "</li></ol>",
+  "This is one item in the numbered list", "Next item in the numbered list" ,
+  "Create an ORDERED LIST by placing multiple items between <LI> and </LI>" )
+jOL.inserttext2 = "Enter NEXT item for ORDERED LIST"
+
+jUL = new HTMLtag ( "UL", "3", "Enter FIRST item for (Plain) UNORDERED LIST", " <ul><li> ", "</li><li> ", "</li></ul>",
+  "This is one item in the plain list", "Next item in the plain list" ,
+  "Create an ORDERED LIST by placing multiple items between <LI> and </LI>" )
+jUL.inserttext2 = "Enter NEXT item for UNORDERED LIST"
+
+jLI = new HTMLtag ( "LI", "2", "Enter the text for an item in a LIST", " <li>", "", "</li>",
+  "This is an item in a LIST", "" ,
+  "The text placed between the <L1> and the </L1> will one item in a LIST.  Requires OL or UL." )
+jDL = new HTMLtag ( "UL", "4", "Enter item for DEFINITION LIST", " <dl><dl>", "</dt> <dd>", " </dd></dl>",
+  "Item to be defined", "Definition of the item" ,
+  "DEFINITION LISTS have two elements: item and definition.  Enter the item." )
+jDL.inserttext2 = "Enter the definition "
+jDL.tagmiddle2='</DD> <DT>'
+
+jDT = new HTMLtag ( "DT", "2", "Enter item for a DEFINITION LIST", " <dt>", "", "</dt>",
+  "This is item for a DEFINITION LIST", "" ,
+  "The text placed between the <DT> and the </DT> will one item in a LIST.  Requires DL." )
+jDD = new HTMLtag ( "DD", "2", "Enter definition for a DEFINITION LIST", " <dd>", "", "</dd>",
+  "This is definition in a DEFINITION LIST", "" ,
+  "The text placed between the <DD> and the </DD> will one item in a LIST.  Requires DL." )
+
+jItalics = new HTMLtag ( "I", "2", "Enter the text to be ITALICIZED", " <i>", "", "</i>",
+	"This will be in italics", "" ,
+	"The text placed between the <i> and the </i> will be ITALICIZED" )  
+	
+jsubraya = new HTMLtag ( "U", "2", "Enter the text to be Subraya", " <u>", "", "</u>",
+	"This will be in Subraya", "" ,
+	"The text placed between the <u> and the </u> will be Subraya" )  	
+
+jImage = new HTMLtag ("Image", 6, "Ingrese la URL (e.g., ejemplo.png)", ' <amp-img layout="responsive" src="', '" height="', '"></amp-img>', "https://4.bp.blogspot.com/-hGBmuFulDRw/WeAlhQKnkBI/AAAAAAAATYc/8HUrKY-C6FoXU_13aVDsiomy26ZTiCUbACLcBGAs/s300/plantilla-de-blogger-en-amp-html-gratis.jpg", "172", "Enter the URL followed by the height and width." )
+jImage.inserttext2 = "Tamaño de altura height en px"
+jImage.sample = "Tamaño de anchura width en px"
+jImage.tagmiddle2='" width="'
+jImage.sampletext3="88"
+  
+// jAnimated = new HTMLtag ("Animated", 2, "Enter the URL (e.g., sample.gif)", ' <AMP-ANIM SRC="', "", '"></AMP-ANIM>', "URL to image (e.g. sample.gif)" , "", "Enter the URL for the image (e.g., sample.gif)" )
+
+jAnchor = new HTMLtag ("Anchor", 5, "Enter the URL (Ejemplo, https://www.google.com.ec)", ' <a href="', '"> ', '</a>',
+  "https://www.google.com.ec", "Google (la descripción aqui)",
+  "Ingrese la dirección URL (Ejemplo, https://www.google.com/doodles) seguido de la descripción." )
+jAnchor.inserttext2 = "Ingrese la descripción (Ejemplo, Hola)"
+
+function About (form) {
+  alert('https://www.ayudadeblogger.com/')
+}
+function Save (form) {
+  alert('No SAVE function is available.  You must "cut & paste" your document into another application.')
+}
+function HjButton (form,selection) {  // ...todo el botón HTML llama a esta rutina
+  if (helpon) {
+    if (confirm(selection.helptext)){
+      addHTML (form,selection)
+    }
+  }else{
+    addHTML (form,selection)
+  }
+}
+
+function addHTML (form,selection) {
+  // ...agregar texto al valor de TextArea
+  cancel = false
+  addText=selection.tagstart
+  if (modeindex==2) { // ...insert mode
+    if (selection.insertmode != 1 ) { // ...if none, skip it all
+      addText += addHTMLinsert (selection, addText, form)
+      if (addText == selection.tagstart) {
+        cancel = true
+      }
+    }
+  }
+  if (modeindex==1) { // ...sample mode
+    addText = addText + selection.sampletext + selection.tagmiddle + selection.sampletext2
+    if (selection.sampletext3){
+      addText = addText + selection.tagmiddle2 + selection.sampletext3
+    }
+  }
+  if (modeindex==0) { // ...simple mode
+    addText += selection.tagmiddle
+  }
+  addText += selection.tagend
+  if (cancel == false) {  // ...poner texto en TextArea a menos que se cancele
+    form.TEXT.value += addText
+  }
+}
+
+function addHTMLinsert (selection, addText, form) {
+  if (selection.insertmode ==2) {   // ...simple insert (eg.<B>...</B>
+    i = ""
+    i = prompt (selection.inserttext, "")
+    if ((i != null) && (i != "")) {     // ...if input add
+      addText = i
+    }else{
+      addText = ""
+    }
+  }
+  if (selection.insertmode == 3) {  // ...UL and OL lists
+    addText = ""
+    i = ""
+    i = prompt (selection.inserttext, "")
+    if ((i != null) && (i != "")) {
+      addText = i
+      while ((i != null) && (i != "")) {  // ...get next until null
+        i=prompt (selection.inserttext2, "")
+        if ((i != null) && (i != "")) {
+          addText=addText + selection.tagmiddle + i
+        }
+      }
+    }
+  }
+  if (selection.insertmode == 4) {  // ...DL list
+    i= "dummy"
+    j = i
+    addText = ""
+    count = 0
+    while ((i != null) && (i != "") && (j != null) && (j !="")) { // ...get next until null
+      ++count
+      i = ""
+      i = prompt (selection.inserttext, "")
+      // ... used for debugging form.TEXT.value += "-->" + i + "<--"
+      if ((i != null) && (i != "")) {
+        j = ""
+        j=prompt (selection.inserttext2, "")
+        if ((j != null) && (j != "")) {
+          if (count > 1){
+            addText += selection.tagmiddle2
+          }
+          addText=addText +i + selection.tagmiddle + j
+        }
+      }
+    }
+  }
+  if (selection.insertmode == 5) {  // ...Anchor and Start
+    addText = ""
+    i = ""
+    i = prompt (selection.inserttext, "")
+    // ... used for debugging form.TEXT.value += "-->" + i + "<--"
+    if ((i != null) && (i != "")) {
+      j = ""
+      j=prompt (selection.inserttext2, "")
+      if ((j != null) && (j != "")) {
+        addText=i + selection.tagmiddle + j
+      }
+    }
+  }
+  if (selection.insertmode == 6) {  // ...Image responsive
+    addText = ""
+    i = ""
+    i = prompt (selection.inserttext, "")
+    if ((i != null) && (i != "")) {
+      j = ""
+      j=prompt (selection.inserttext2, "")
+      if ((j != null) && (j != "")) {
+        k = ""
+        k=prompt (selection.sample, "")
+        addText=i + selection.tagmiddle + j + selection.tagmiddle2 +k
+      }
+    }
+  }
+ 
+  return addText
+}
+
+function preview(form) {
+             msg=open("","displayWindow","toolbar=no,directories=no,menubar=yes");
+             msg.document.write(form.TEXT.value);
+}
+<!-- done hiding from old browsers -->
+
+</script>
+<form>
+  <table border="0">
+    <tr>
+      <td align="right"><b>Help Status</b>:</td>
+       <td valign="bottom"> <input name="radiohelp" value="true" onclick=" helpon = true" type="radio">
+        ON
+        <input name="radiohelp" value="false" checked="checked" onclick=" helpon = false" type="radio">
+        OFF
+    </tr>
+    <tr>
+      <td align="right"><b>HTML Mode</b>: </td><td valign="bottom">
+      <input name="radiomode" value="Example editor for HTML Amp" onclick=" modeindex = 0 " type="radio">
+        Simple
+        <input name="radiomode" value="Example editor for HTML Amp" onclick=" modeindex = 1" type="radio">
+        Sample
+        <input name="radiomode" value="Example editor for HTML Amp" checked="checked" onclick=" modeindex = 2" type="radio">
+        Prompt
+    </tr>
+  </table>
+  <table border="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td align="left"><input value=" Start " onClick="HjButton(this.form,jStart)" target="_blank" type="button">
+          <input value=" End " onClick="HjButton(this.form,jEnd)"  type="button"></td>
+        <td align="center"><input value=" Preview" onClick="preview(this.form)" target="_blank" type="button"></td>
+        <td align="center"><input value=" Save " onClick="Save(this.form)" target="_blank" type="button"></td>
+        <td align="center"><input value=" About Editor " onClick="About(this.form)" target="_blank" type="button"></td>
+      </tr>
+      <tr>
+        <td><input value="strong" onClick="HjButton(this.form,jStrong)"  type="button">
+          <input value="em" onClick="HjButton(this.form,jEm)"  type="button">
+          <input value=" pre " onClick="HjButton(this.form,jPre)"  type="button">
+        </td>
+        <td><input value=" h1 " onClick="HjButton(this.form,jH1)"  type="button">
+          <input value=" h2 " onClick="HjButton(this.form,jH2)"  type="button">
+          <input value=" h3 " onClick="HjButton(this.form,jH3)"  type="button">
+        </td>
+        <td><input value=" ol " onClick="HjButton(this.form,jOL)"  type="button">
+          <input value=" ul " onClick="HjButton(this.form,jUL)"  type="button">
+          <input value=" li " onClick="HjButton(this.form,jLI)"  type="button">
+        </td>
+        <td><input value=" dl " onClick="HjButton(this.form,jDL)"  type="button">
+          <input value=" dt " onClick="HjButton(this.form,jDT)"  type="button">
+          <input value=" dd " onClick="HjButton(this.form,jDD)"  type="button">
+          <br></td>
+        <td align="center"><input value=" p " onClick="HjButton(this.form,jPara)" type="button">
+          <input value=" br " onClick="HjButton(this.form,jBreak)"  type="button">
+          <input value=" hr " onClick="HjButton(this.form,jRule)"  type="button">
+        </td>
+        </tr>
+      <tr>
+        <td align="center">
+		<input value=" Link " onClick="HjButton(this.form,jAnchor)"  type="button">
+	 <input value=" Italics " onClick="HjButton(this.form,jItalics)"  type="button">
+	 <input value=" Underline " onClick="HjButton(this.form,jsubraya)"  type="button">	
+        </td>
+            <td align="center">
+          <input value=" Responsive Image" onClick="HjButton(this.form,jImage)" type="button">
+        </td>
+        <td align="center"><input value="     Center     " onClick="HjButton(this.form,jCenter)" type="button">
+        </td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <b class="txt-2">Editor AMP HTML:</b>
+   <br/>
+  <textarea name="TEXT" rows="16" cols="99" wrap="VIRTUAL"></textarea>
+  <br>
+  <input value="Erase and Restart Document" onClick="HjReset(this.form)" type="reset">
+</form>
+<p>By <a href="https://www.kecoh.info/">https://www.kecoh.info/</a>
+  </div>
+  </div>
+  
+</body>
+</html>
