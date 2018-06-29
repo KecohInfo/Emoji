@@ -112,8 +112,8 @@ function HTMLtag (buttonname, insertmode, inserttext, tagstart, tagmiddle, tagen
   this.helptext   = helptext
 }
 
-jStart = new HTMLtag ("Start", 5, "Ingres el título (ejemplo, Mi página AMP HTML)", '<!doctype html><HTML amp lang="en"><HEAD><META charset="utf-8"><TITLE>', '</TITLE><LINK rel="canonical" href="', '" /><META name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><STYLE>body {opacity: 0}</STYLE><noscript><STYLE>body {opacity: 1}</STYLE></noscript><SCRIPT async src="https://cdn.ampproject.org/v0.js"><\/SCRIPT></HEAD><BODY>',"Mi página AMP HTML", "https://www.ayudadeblogger.com/amp/","Ingrese el título seguido de la URL cononical (ejemplo, https://www.ayudadeblogger.com//amp/)" )
-jStart.inserttext2 = "Ingrese la URL canonical (ejemplo., https://www.ayudadeblogger.com/amp/)"
+jStart = new HTMLtag ("Start", 5, "Enter the title (example, My AMP HTML page)", '<!doctype html><HTML amp lang="en"><HEAD><META charset="utf-8"><TITLE>', '</TITLE><LINK rel="canonical" href="', '" /><META name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><STYLE>body {opacity: 0}</STYLE><noscript><STYLE>body {opacity: 1}</STYLE></noscript><SCRIPT async src="https://cdn.ampproject.org/v0.js"><\/SCRIPT></HEAD><BODY>',"My AMP HTML page", "https://www.kecoh.info/amp/","Enter the title followed by the cononical URL (example, https://www.kecoh.info/amp/)" )
+jStart.inserttext2 = "Enter the canonical URL (example., https://www.kecoh.info/amp/)"
 
 
 jEnd = new HTMLtag ( "End", "1", "", " </BODY></HTML>", "", "",
@@ -183,7 +183,7 @@ jsubraya = new HTMLtag ( "U", "2", "Enter the text to be Subraya", " <u>", "", "
 	"This will be in Subraya", "" ,
 	"The text placed between the <u> and the </u> will be Subraya" )  	
 
-jImage = new HTMLtag ("Image", 6, "Ingrese la URL (e.g., ejemplo.png)", ' <amp-img layout="responsive" src="', '" height="', '"></amp-img>', "https://4.bp.blogspot.com/-hGBmuFulDRw/WeAlhQKnkBI/AAAAAAAATYc/8HUrKY-C6FoXU_13aVDsiomy26ZTiCUbACLcBGAs/s300/plantilla-de-blogger-en-amp-html-gratis.jpg", "172", "Enter the URL followed by the height and width." )
+jImage = new HTMLtag ("Image", 6, "Ingrese la URL (e.g., example.png)", ' <amp-img layout="responsive" src="', '" height="', '"></amp-img>', "https://4.bp.blogspot.com/-hGBmuFulDRw/WeAlhQKnkBI/AAAAAAAATYc/8HUrKY-C6FoXU_13aVDsiomy26ZTiCUbACLcBGAs/s300/plantilla-de-blogger-en-amp-html-gratis.jpg", "172", "Enter the URL followed by the height and width." )
 jImage.inserttext2 = "Tamaño de altura height en px"
 jImage.sample = "Tamaño de anchura width en px"
 jImage.tagmiddle2='" width="'
@@ -191,13 +191,13 @@ jImage.sampletext3="88"
   
 // jAnimated = new HTMLtag ("Animated", 2, "Enter the URL (e.g., sample.gif)", ' <AMP-ANIM SRC="', "", '"></AMP-ANIM>', "URL to image (e.g. sample.gif)" , "", "Enter the URL for the image (e.g., sample.gif)" )
 
-jAnchor = new HTMLtag ("Anchor", 5, "Enter the URL (Ejemplo, https://www.google.com.ec)", ' <a href="', '"> ', '</a>',
+jAnchor = new HTMLtag ("Anchor", 5, "Enter the URL (example, https://www.google.com.ec)", ' <a href="', '"> ', '</a>',
   "https://www.google.com.ec", "Google (la descripción aqui)",
-  "Ingrese la dirección URL (Ejemplo, https://www.google.com/doodles) seguido de la descripción." )
-jAnchor.inserttext2 = "Ingrese la descripción (Ejemplo, Hola)"
+  "Ingrese la dirección URL (example, https://www.google.com/doodles) seguido de la descripción." )
+jAnchor.inserttext2 = "Ingrese la descripción (example, Hola)"
 
 function About (form) {
-  alert('https://www.ayudadeblogger.com/')
+  alert('https://www.kecoh.info/')
 }
 function Save (form) {
   alert('No SAVE function is available.  You must "cut & paste" your document into another application.')
