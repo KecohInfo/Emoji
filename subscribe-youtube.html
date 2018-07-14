@@ -31,7 +31,21 @@ var channel = getQueryVariable("channelid");
 <body>
 <script src="https://apis.google.com/js/platform.js"></script>
 <script>
-document.write('<div class="g-ytsubscribe" data-channelid="'+ channel +'" data-layout="default" data-count="default"></div>');
+document.write('<div class="g-ytsubscribe" data-channelid="'+ channel +'" data-layout="default" data-count="default" data-onytevent="onYtEvent"></div>');
 </script>
+	
+	
+	<script>
+  function onYtEvent(payload) {
+    var c = document.getElementById('yt-console');
+    c.innerText += ' event';
+    if (payload && payload.eventType == 'subscribe') {
+      c.innerText += ' subscribe';
+    } else if (payload && payload.eventType == 'unsubscribe') {
+      c.innerText += ' unsubscribe';
+    }
+  }
+</script>
+
 </body>
 </html>
