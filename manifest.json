@@ -1,0 +1,38 @@
+{
+  "name": "Kecoh.Info",
+  "short_name": "KI",
+  "start_url": "https://cdn.staticaly.com/img/www.kecoh.info/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#2B0C93",
+  "description": "Laman perkongsian media popular di malaysia.",
+  "icons": [{
+    "src": https://cdn.staticaly.com/img/2.bp.blogspot.com/-x9qPUxa74mA/W7wkRBvOhaI/AAAAAAAAI-c/bIy1UpOWvBk2AdxJdmk6VuoLh-YBSM7sACLcBGAs/s48/android-icon-192x192.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": https://cdn.staticaly.com/img/2.bp.blogspot.com/-x9qPUxa74mA/W7wkRBvOhaI/AAAAAAAAI-c/bIy1UpOWvBk2AdxJdmk6VuoLh-YBSM7sACLcBGAs/s72/android-icon-192x192.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": https://cdn.staticaly.com/img/2.bp.blogspot.com/-x9qPUxa74mA/W7wkRBvOhaI/AAAAAAAAI-c/bIy1UpOWvBk2AdxJdmk6VuoLh-YBSM7sACLcBGAs/s96/android-icon-192x192.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": https://cdn.staticaly.com/img/2.bp.blogspot.com/-x9qPUxa74mA/W7wkRBvOhaI/AAAAAAAAI-c/bIy1UpOWvBk2AdxJdmk6VuoLh-YBSM7sACLcBGAs/s144/android-icon-192x192.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": https://cdn.staticaly.com/img/2.bp.blogspot.com/-x9qPUxa74mA/W7wkRBvOhaI/AAAAAAAAI-c/bIy1UpOWvBk2AdxJdmk6VuoLh-YBSM7sACLcBGAs/s168/android-icon-192x192.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": https://cdn.staticaly.com/img/2.bp.blogspot.com/-x9qPUxa74mA/W7wkRBvOhaI/AAAAAAAAI-c/bIy1UpOWvBk2AdxJdmk6VuoLh-YBSM7sACLcBGAs/s192/android-icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "https://cdn.staticaly.com/img/2.bp.blogspot.com/-7DnH_eGRko0/W7wkQ5skbuI/AAAAAAAAI-U/TZ5rbr97fLIvUzuPS5A-OeERf8HL2B9mwCLcBGAs/s512/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
