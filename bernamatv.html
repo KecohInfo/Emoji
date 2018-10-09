@@ -105,24 +105,5 @@ a {
             </video>
 
 </div>
-<div class="mobile-hide">
-<div id="algiTV"></div>
-<script>
-    jwplayer('algiTV').setup({playlist:[{		 
-    file:'//stream2.1malaysiaiptv.com/mylive/smil:bernama2_all.smil/playlist.m3u8'},{		
-    file:''},{ 	
-    file:'',
-}],
-    width:"100%",height: '100%',
-abouttext:'algiTV',stretching: "exactfit",
-aboutlink:'http://www.algitv.com',autostart:true,androidhls:true,displaytitle:false,repeat:true,stagevideo:false,visualplaylist:false,cast:{appid:"chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID"},skin:{"active":"#DF2148","inactive":"#CCCCCC","name":"glow"},primary: 'html5',
 
-    advertising: {
-        client: "vast",
-        admessage: 'Your TV will resume in XX seconds.',
-         tag: "http://delivery.ambient-platform.com/247/xmlvideoad/zid_1462869307/wid_1462869284/type_inline/cb_[timestamp]"
-  }
-    });
-     jwplayer('algiTV').on('error',function(){if(jwplayer('algiTV').getPlaylistIndex()>=(jwplayer('algiTV').getPlaylist().length-1)){$('#player-play').html('<img width="100%" src="" alt="SCTV"/>');}else{jwplayer('algiTV').next();}});</script>
-	 </div>
 </body></html>
