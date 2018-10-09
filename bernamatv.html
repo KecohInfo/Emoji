@@ -6,6 +6,10 @@
 <meta content='width=device-width, initial-scale=1' name='viewport'>
   <script src="https://content.jwplatform.com/libraries/HMJlhjwe.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/clappr/0.2.61/clappr.min.js"></script>
+<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+  
 <style>
 body {
   background-color:transparent;
@@ -108,4 +112,14 @@ a {
 
 </div>
 
+    <h1>Video</h1>
+
+  <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="268" 
+  data-setup='{}'>
+    <source src="//stream2.1malaysiaiptv.com/mylive/smil:bernama2_all.smil/playlist.m3u8" type='application/x-mpegURL'>
+  </video>
+
+  <script>
+  var player = videojs('my_video_1');
+  </script>
 </body></html>
