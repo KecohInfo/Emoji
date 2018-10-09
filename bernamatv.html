@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bernama TV</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<style>
+body {
+  background-color:transparent;
+  margin:0;
+  padding:0;
+  color:#333;
+  font-family:-apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif;
+}
+a {
+  text-decoration:none;
+  transition:all 400ms ease-in-out;
+}
+*{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.related-post {
+  margin:0 auto;
+  height:210px;
+  overflow:hidden;
+}
+.related-post h4 {
+  font-size:20px;
+  margin:0 5px 10px;
+  font-weight:500;
+}
+.related-post-style-2 {
+  margin:0 -4px 0 0;
+  padding:0;
+  list-style:none;
+}
+.related-post-style-2 li {
+   display: block;
+   padding:0;
+    float: left;
+  width:20%;
+  height:210px;
+    overflow: hidden;
+    margin:0 0 4px;
+  padding:0 4px 0 0;
+  list-style:none;
+}
+.related-post-style-2 li a:hover {color:#777}
+.related-post-style-2 .related-post-item-thumbnail {
+  width:100%;
+  height:auto;
+  max-width:none;
+  max-height:none;
+  background-color:transparent;
+  border:none;
+  padding:0;
+  float:none;
+  margin:0;
+  transition:all 400ms ease-in-out;
+  position:relative;
+}
+.related-post-style-2 .related-post-item-thumbnail img {
+  width:100%;
+  height:100%;
+  max-width:none;
+  max-height:none;
+  background-color:transparent;
+  border:none;
+  display:block;
+}
+.related-post-style-2 .related-post-item-title {
+  font-weight:500;
+    display: block;
+    display: -webkit-box;
+  margin-top:10px;
+  margin-bottom:0;
+  line-height:1.1;
+    position:relative;
+}
+.related-post-style-2 .related-post-item-more,.related-post-style-2 .related-post-item-summary,.related-post-style-2 .related-post-item-more,.related-post-style-2 .related-post-item-summary a{
+  display:none;
+}
+.related-post-style-2 .related-post-item-thumbnail:after{content:"";cursor:pointer;margin:auto;width:56px;height:56px;background-image:url(https://1.bp.blogspot.com/-DpJGZ47Olck/WSkXyTDP1kI/AAAAAAAArQQ/UwIxH4hYRIkbgZkN0_mUrkK12HveGFsXACLcB/s1600/play.png);background-position:center;-webkit-background-size:48px 48px;background-size:48px 48px;position:absolute;top:0;bottom:0;left:0;right:0;opacity:0;transition:all 400ms ease-in-out;}
+.related-post-style-2 li:hover .related-post-item-thumbnail:after{opacity:.8}
+.related-post-style-2 .related-post-item-title:before{content:"LIVE NOW";text-align:center;text-transform:uppercase;font-size:10px;font-weight:500;color:red;padding:1px 3px;border:1px solid red;position:absolute;bottom:-20px;left:0;z-index:2;border-radius:2px}
+@media screen and (max-width:1024px){
+  .related-post-style-2 li {
+  width:25%;
+  }
+}
+@media screen and (max-width:640px){
+  .related-post-style-2 li {
+  width:100%;height:250px
+  }
+  .related-post {
+    height:250px;}
+}
+</style>
+</head>
+<body>
+<span id="ch">
+
+</span>
+<div class="phoneContent">
+<video controls width="100%" height="100%"  poster="data:image/gif,AAAA" style="background:transparent no-repeat url('https://3.bp.blogspot.com/-OaH1pzrROTM/Wj9dpv36PYI/AAAAAAAAJ2Y/jYgn7G6VnX0kE5l5JjhOHIcJUelaUozWQCLcBGAs/s1600/bernama.jpg');background-size:100%">
+                <source src="//stream2.1malaysiaiptv.com/mylive/smil:bernama2_all.smil/playlist.m3u8" />
+            </video>
+
+</div>
+<div class="mobile-hide">
+<div id="algiTV"></div>
+<script>
+    jwplayer('algiTV').setup({playlist:[{		 
+    file:'//stream2.1malaysiaiptv.com/mylive/smil:bernama2_all.smil/playlist.m3u8'},{		
+    file:''},{ 	
+    file:'',
+}],
+    width:"100%",height: '100%',
+abouttext:'algiTV',stretching: "exactfit",
+aboutlink:'http://www.algitv.com',autostart:true,androidhls:true,displaytitle:false,repeat:true,stagevideo:false,visualplaylist:false,cast:{appid:"chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID"},skin:{"active":"#DF2148","inactive":"#CCCCCC","name":"glow"},primary: 'html5',
+
+    advertising: {
+        client: "vast",
+        admessage: 'Your TV will resume in XX seconds.',
+         tag: "http://delivery.ambient-platform.com/247/xmlvideoad/zid_1462869307/wid_1462869284/type_inline/cb_[timestamp]"
+  }
+    });
+     jwplayer('algiTV').on('error',function(){if(jwplayer('algiTV').getPlaylistIndex()>=(jwplayer('algiTV').getPlaylist().length-1)){$('#player-play').html('<img width="100%" src="" alt="SCTV"/>');}else{jwplayer('algiTV').next();}});</script>
+	 </div>
+</body></html>
