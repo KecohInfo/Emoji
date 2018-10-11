@@ -6,67 +6,93 @@
         <script src="https://www.metube.id/cc-content/themes/default/js/jquery.min.js"></script>
         <script>jwplayer.key = "9dOyFG96QFb9AWbR+FhhislXHfV1gIhrkaxLYfLydfiYyC0s";</script>
 </head>
- <style>*{margin:0;padding:0}</style>
-<style>
-.responsive img {
-    max-width:100%;
-    /*width:100%;*/
-    height: auto;
-}
-.play-wrapper[data-poster] svg{background-color: #F40A36;	border-radius: 6px;	padding: 4px;}
-.play-wrapper[data-poster] svg path {border: 1px solid #7D85F4;fill:#FFF !important}
-#ch{font-size:12px;line-height:20px;position:absolute;top:0;left:0;background-color:#;border:0px solid #DFDFDF;border-radius:1px;padding:1px 2px 2px;color:#fff;z-index:999;}
-#ch:hover{cursor:pointer;border:1px solid #999999;}
-#btn{color:#fff;background: #3498db;background-image: -webkit-linear-gradient(top, #3498db, #2980b9);background-image: -moz-linear-gradient(top, #3498db, #2980b9);background-image: -ms-linear-gradient(top, #3498db, #2980b9);background-image: -o-linear-gradient(top, #3498db, #2980b9);background-image: linear-gradient(to bottom, #3498db, #2980b9);-webkit-border-radius: 2;-moz-border-radius: 4;border-radius: 2px;font-family: Arial;color: #ffffff;font-size: 14px;padding: 2px;text-decoration: none;}
-#btn a{color:#fff}
-#btn:hover {background: #3cb0fd;background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);background-image: -o-linear-gradient(top, #3cb0fd, #3498db);background-image: linear-gradient(to bottom, #3cb0fd, #3498db);text-decoration: none;}
-video{
-   
-    border:0px solid red;
-}
-.clear{clear:both;}
-@media screen and (min-width: 0px) and (max-width: 500px) {
-  #facebook { display: none; }
-  .mobile-hide{ display: none; }
-}
-.phoneContent { display: none;}
-   /* Smartphone Portrait and Landscape */
-   @media only screen
-   and (min-device-width : 100px)
-   and (max-device-width : 799px){ .phoneContent { display: inline;}}
-   
-   .deskContent { display: inline;}
-   /* Smartphone Portrait and Landscape */
-   @media only screen
-   and (min-device-width : 800px)
-   and (max-device-width : 1024px){  .deskContent { display: none;}}
- </style>
-  <span id="ch">
-Copyright by Measat Broadcast Network Systems (Astro)
-</span>
-<div class="phoneContent">
-<video controls width="100%" height="100%"  poster="data:image/gif,AAAA" style="background:transparent no-repeat url('https://1.bp.blogspot.com/-w_6i4b4Io2M/Wj9STvlncHI/AAAAAAAAJ2E/xRPFIZjQrrgumxCKCGvc-kSxvKPxqEnZwCLcBGAs/s1600/awani.jpg');background-size:100%">
-                <source src="//bcoveliveios-i.akamaihd.net/hls/live/225864/4508222217001/master.m3u8" />
-            </video>
-
-</div>
-<div class="mobile-hide">
-<div id="algiTV"></div>
-<script>
-    jwplayer('algiTV').setup({playlist:[{		 
-    file:'//bcoveliveios-i.akamaihd.net/hls/live/225864/4508222217001/master.m3u8'},{		
-    file:''},{ 	
-    file:'',
-}],
-    width:"100%",height: '100%',
-abouttext:'algiTV',stretching: "exactfit",
-aboutlink:'http://www.algitv.com',autostart:true,androidhls:true,displaytitle:false,repeat:true,stagevideo:false,visualplaylist:false,cast:{appid:"chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID"},skin:{"active":"#DF2148","inactive":"#CCCCCC","name":"glow"},primary: 'html5',
-
-    advertising: {
-        client: "vast",
-        admessage: 'Your TV will resume in XX seconds.',
-         tag: "http://delivery.ambient-platform.com/247/xmlvideoad/zid_1462869307/wid_1462869284/type_inline/cb_[timestamp]"
-  }
-    });
-     jwplayer('algiTV').on('error',function(){if(jwplayer('algiTV').getPlaylistIndex()>=(jwplayer('algiTV').getPlaylist().length-1)){$('#player-play').html('<img width="100%" src="" alt="SCTV"/>');}else{jwplayer('algiTV').next();}});</script>
-	 </div>
+         <style type="text/css">
+            html, body, .video-unavailable, video, img, .video-js {
+                width:100% !important;
+                height:100% !important;
+                overflow:hidden;
+            }
+            .video-unavailable {
+                background-color:#000;
+                text-align:center;
+                color:#FFF;
+                font-size:16px;
+                font-family:arial,helvetica,sans-serif;
+            }
+            .video-unavailable p {
+                padding:50px;
+                line-height:1.5em;
+            }
+                        .jw-icon-next {
+                display: none !important;
+            }
+                    </style>
+    <body>        
+            <div id="myElement"></div>
+            <script>
+                jwplayer('myElement').setup({
+                                        playlist: [{
+                            file: 'https://cdn-livetv1.metube.id/hls/antv.m3u8',
+                            image: "https://cdn-static.metube.id/live/image/1CyQ0olyXtD7o39JZGCM.jpg",
+                            title: 'ANTV',
+                            mediaid: '1'
+                        }, {
+                            file: '',
+                            image: "https://cdn-static.metube.id/live/image/1CyQ0olyXtD7o39JZGCM.jpg",
+                            title: 'ANTV',
+                            mediaid: '2'
+                        }, {
+                            file: '',
+                            image: "https://cdn-static.metube.id/live/image/1CyQ0olyXtD7o39JZGCM.jpg",
+                            title: 'ANTV',
+                            mediaid: '3'
+                        }, {
+                            file: '',
+                            image: "https://cdn-static.metube.id/live/image/1CyQ0olyXtD7o39JZGCM.jpg",
+                            title: 'ANTV',
+                            mediaid: '4'
+                        }, {
+                            file: '',
+                            image: "https://cdn-static.metube.id/live/image/1CyQ0olyXtD7o39JZGCM.jpg",
+                            title: 'ANTV',
+                            mediaid: '5'
+                        }],
+                                        width: "100%",
+                    aspectratio: "16:9",
+                    abouttext: 'meTube.id',
+                                        stretching: "exactfit",
+                                                            aboutlink: 'https://www.metube.id',
+                    autostart: true,
+                    androidhls: true,
+                    displaydescription: true,
+                    displaytitle: true,
+                    visualplaylist: false,
+                    skin: {"active": "#DF2148", "inactive": "#CCCCCC", "name": "glow"},
+                    plugins: {
+                                            "https://www.metube.id/cc-content/themes/default/js/ping.js": {"pixel": "http://content.jwplatform.com/ping.gif"}
+                    },
+                                                            advertising: {
+                      client: "googima",
+                      schedule: {
+                        preroll: {
+                          offset: "pre",
+                          tag: "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/21705426382/1.1&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=https%3A%2F%2Fwww.metube.id%2Flive%2FANTV&description_url=https%3A%2F%2Fwww.metube.id%2Flive%2FANTV&cust_params=Live%3D206"
+                        }
+                      }
+                    },
+                                        ga: {
+                                                "idstring": "ANTV",
+                        "label": "206"
+                                            }
+                });
+                jwplayer('myElement').on('error', function () {
+                                    if (jwplayer('myElement').getPlaylistIndex() >= (jwplayer('myElement').getPlaylist().length - 1)) {
+                        $('#player-play').html('<img width="100%" height="431.44" src="https://www.metube.id/cc-content/themes/default/images/metube_error_player.jpg" alt="meTube error player"/>');
+                    } else {
+                        jwplayer('myElement').next();
+                    }
+                                });
+                jwplayer('myElement').on('play', function () {
+                                     });
+                
+            </script>
