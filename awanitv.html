@@ -1,26 +1,72 @@
+<head>
+<meta name="robots" content="noindex" /> 
+        <link rel="stylesheet" href="https://www.metube.id/cc-content/themes/default/css/reset.css" />
+        <script src="https://www.metube.id/cc-content/themes/default/jwplayer/jwplayer.js?v=6"></script>
+        <script src="https://www.metube.id/cc-content/themes/default/jwplayer/jwplayer.compatibility.js"></script>
+        <script src="https://www.metube.id/cc-content/themes/default/js/jquery.min.js"></script>
+        <script>jwplayer.key = "9dOyFG96QFb9AWbR+FhhislXHfV1gIhrkaxLYfLydfiYyC0s";</script>
+</head>
+ <style>*{margin:0;padding:0}</style>
+<style>
+.responsive img {
+    max-width:100%;
+    /*width:100%;*/
+    height: auto;
+}
+.play-wrapper[data-poster] svg{background-color: #F40A36;	border-radius: 6px;	padding: 4px;}
+.play-wrapper[data-poster] svg path {border: 1px solid #7D85F4;fill:#FFF !important}
+#ch{font-size:12px;line-height:20px;position:absolute;top:0;left:0;background-color:#;border:0px solid #DFDFDF;border-radius:1px;padding:1px 2px 2px;color:#fff;z-index:999;}
+#ch:hover{cursor:pointer;border:1px solid #999999;}
+#btn{color:#fff;background: #3498db;background-image: -webkit-linear-gradient(top, #3498db, #2980b9);background-image: -moz-linear-gradient(top, #3498db, #2980b9);background-image: -ms-linear-gradient(top, #3498db, #2980b9);background-image: -o-linear-gradient(top, #3498db, #2980b9);background-image: linear-gradient(to bottom, #3498db, #2980b9);-webkit-border-radius: 2;-moz-border-radius: 4;border-radius: 2px;font-family: Arial;color: #ffffff;font-size: 14px;padding: 2px;text-decoration: none;}
+#btn a{color:#fff}
+#btn:hover {background: #3cb0fd;background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);background-image: -o-linear-gradient(top, #3cb0fd, #3498db);background-image: linear-gradient(to bottom, #3cb0fd, #3498db);text-decoration: none;}
+video{
+   
+    border:0px solid red;
+}
+.clear{clear:both;}
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  #facebook { display: none; }
+  .mobile-hide{ display: none; }
+}
+.phoneContent { display: none;}
+   /* Smartphone Portrait and Landscape */
+   @media only screen
+   and (min-device-width : 100px)
+   and (max-device-width : 799px){ .phoneContent { display: inline;}}
+   
+   .deskContent { display: inline;}
+   /* Smartphone Portrait and Landscape */
+   @media only screen
+   and (min-device-width : 800px)
+   and (max-device-width : 1024px){  .deskContent { display: none;}}
+ </style>
+  <span id="ch">
+Copyright by Measat Broadcast Network Systems (Astro)
+</span>
+<div class="phoneContent">
+<video controls width="100%" height="100%"  poster="data:image/gif,AAAA" style="background:transparent no-repeat url('https://1.bp.blogspot.com/-w_6i4b4Io2M/Wj9STvlncHI/AAAAAAAAJ2E/xRPFIZjQrrgumxCKCGvc-kSxvKPxqEnZwCLcBGAs/s1600/awani.jpg');background-size:100%">
+                <source src="//bcoveliveios-i.akamaihd.net/hls/live/225864/4508222217001/master.m3u8" />
+            </video>
 
-<link rel="stylesheet" href="//releases.flowplayer.org/7.0.4/commercial/skin/skin.css">
-    <style>
+</div>
+<div class="mobile-hide">
+<div id="algiTV"></div>
+<script>
+    jwplayer('algiTV').setup({playlist:[{		 
+    file:'//bcoveliveios-i.akamaihd.net/hls/live/225864/4508222217001/master.m3u8'},{		
+    file:''},{ 	
+    file:'',
+}],
+    width:"100%",height: '100%',
+abouttext:'algiTV',stretching: "exactfit",
+aboutlink:'http://www.algitv.com',autostart:true,androidhls:true,displaytitle:false,repeat:true,stagevideo:false,visualplaylist:false,cast:{appid:"chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID"},skin:{"active":"#DF2148","inactive":"#CCCCCC","name":"glow"},primary: 'html5',
 
-   </style>
-   <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="//releases.flowplayer.org/7.0.4/commercial/flowplayer.min.js"></script>
-  <script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js"></script> 
-  <script>
-  flowplayer(function (api) {
-    api.on("load", function (e, api, video) {
-      $("#vinfo").text(api.engine.engineName + " engine playing " + video.type);
-    }); });
-  </script>
-
-<div class="flowplayer fixed-controls no-toggle no-time play-button obj"
-      style="    width: 85.5%;
-    height: 80%;
-    margin-left: 7.2%;
-    margin-top: 6%;
-    z-index: 1000;" data-key="$812975748999788" data-live="true" data-share="false" data-ratio="0.5625"  data-logo="">
-      <video autoplay="true" stretch="true">
-
-         <source type="application/x-mpegurl" src="http://bcoveliveios-i.akamaihd.net/hls/live/225864/4508222217001/master.m3u8">
-      </video>   
-   </div>
+    advertising: {
+        client: "vast",
+        admessage: 'Your TV will resume in XX seconds.',
+         tag: "http://delivery.ambient-platform.com/247/xmlvideoad/zid_1462869307/wid_1462869284/type_inline/cb_[timestamp]"
+  }
+    });
+     jwplayer('algiTV').on('error',function(){if(jwplayer('algiTV').getPlaylistIndex()>=(jwplayer('algiTV').getPlaylist().length-1)){$('#player-play').html('<img width="100%" src="" alt="SCTV"/>');}else{jwplayer('algiTV').next();}});</script>
+	 </div>
