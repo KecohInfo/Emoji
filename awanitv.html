@@ -1,199 +1,28 @@
-<style type="text/css">
-count {
-position: absolute;
-left:10px;
-top: 85vh;
-}
-iframe {
-position: absolute;
-left: 0px;
-top: 0px;
-border: 0px;
-height: 80vh;
-width: 100%;
-}
-#small {
-position: fixed;
-right: 0vw;
-left: auto;
-top: auto;
-bottom: 0vw;
-border: 0px;
-height: 144px;
-width: 256px;
-}
-
-channellist {
-position: absolute;
-top: 85vh;
-}
-</style>
+<!DOCTYPE html>
 <html>
-<framespace>
-</framespace>
-<channellist>
-</channellist>
-<count>
-</count>
+<head>
+<meta charset=utf-8 />
+<title>Video</title>
+
+  <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+  <script src="http://vjs.zencdn.net/4.12/video.js"></script>
+ <script src="https://github.com/videojs/videojs-contrib-media-sources/releases/download/v0.1.0/videojs-media-sources.js"></script>
+  <script src="https://github.com/videojs/videojs-contrib-hls/releases/download/v0.11.2/videojs.hls.min.js"></script>
+
+</head>
+<body>
+  <h1>Video</h1>
+
+  <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="268" 
+  data-setup='{}'>
+    <source src="http://bcoveliveios-i.akamaihd.net/hls/live/225864/4508222217001/master.m3u8" type='application/x-mpegURL'>
+  </video>
+
+  <script>
+  var player = videojs('my_video_1');
+  </script>
+
+</body>
 </html>
-<script type="text/javascript" src="http://www.notanewbie.com/returnFile.js"></script>
-<script type="text/javascript">
-function playURL(url) {
-framespace = document.getElementsByTagName("framespace")
-framespace[0].innerHTML = '<iframe allowfullscreen="true" src="http://notanewbie.com/hls-live-player/v2.html?quality=480&volume=5&fancy=yes&url=' + url + '"><br /><br /><br />'
-}
-function getUrls(link) {
-text = link
-text = text.split("\n")
-z = 0;
-b = 0
-URLS = []
-if(text[z].indexOf("EXT") > -1 && text[z + 1].indexOf("EXT") > -1) {
-z = z + 1
-}
-while(text[z]) {
-URLS[b] = text[z + 1]
-z = z + 2
-b = b + 1
-}
-return URLS
-}
-function printURLs(urls) {
-werds = getUrls(urls)
-twerds = []
-a = 0
-while(werds[a]) {
-twerds[a] = werds[a] + "<br />"
-a = a + 1
-}
-a = 0
-textwerds = ""
-while(twerds[a]) {
-textwerds = textwerds + twerds[a]
-a = a + 1
-}
-return textwerds
-}
-function getName(INPUT) {
-werds = INPUT
-twerd = werds.split("\n")
-a = 0
-b = 0
-Twerd = []
-if(twerd[a].indexOf("EXT") > -1 && twerd[a + 1].indexOf("EXT") > -1) {
-a = a + 1
-}
-while(twerd[a]) {
-Twerd[b] = twerd[a].split(",")
-Twerd[b] = Twerd[b][Twerd[b].length - 1]
-a = a + 2
-b = b + 1
-}
-return Twerd
-}
-function showStreams(url, y, tiny) {
-console.log(url)
-list = document.getElementsByTagName("channellist")
-framespace = document.getElementsByTagName("framespace")[0]
-c = document.getElementsByTagName("count")[0]
-N = getName(url)
-U = getUrls(url)
-window.count = window.count + U.length
-if(y < 23) {
-c.innerHTML = "Loading..." + window.count + " channels found."
-}
-else {
-c.innerHTML = window.count + " channels found."
-}
-o = 0
-list[0].innerHTML = list[0].innerHTML + '<br />' + U.length + ' channels<br />TinyURL link: <a href="http://tinyurl.com/ls' + tiny + '">tinyurl.com/ls' + tiny + '</a>'
-while(N[o]) {
-list[0].innerHTML = list[0].innerHTML + '<br /><a href="javascript:playURL(' + "'" + U[o] + "'" + ')">' + N[o] + '</a>'
-o = o + 1
-}
-}
-count = 0
-y = 0;
-xhttp = []
-function showPack(code, name, y, fallback) {
-console.log(code)
-xhttp[y] = new XMLHttpRequest();
-//xhttp[y].open("GET", "http://tinyurl.com/ls" + code, true);
-xhttp[y].open("GET", fallback, true);
-//xhttp[y].setRequestHeader('X-Requested-With','XMLHttpRequest');
-xhttp[y].send();
-xhttp[y].onload = function (e) {
-list = document.getElementsByTagName("channellist")
-list[0].innerHTML = list[0].innerHTML + '<br /><br /><b>' + name + ' Package:</b>'
-console.log(name + "'s code:" + xhttp[y].responseText)
-showStreams(xhttp[y].responseText, y, code)
-};
-}
-e = .75
-s = 1000
-g = e * s
-x = 1
-showPack("prosp", "Prosperity", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/christianity/prosperity.m3u8");
-x = x + 1
-showPack("protest", "Protestant", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/christianity/protestant.m3u8");
-x = x + 1
-showPack("comedy", "Comedy", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/comedy.m3u8");
-x = x + 1
-showPack("fashion", "Fashion", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/fashion.m3u8");
-x = x + 1
-showPack("livegame", "Gaming", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/gaming.m3u8");
-x = x + 1
-showPack("gen", "General Entertainment", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/general.m3u8");
-x = x + 1
-showPack("kids", "Kids", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/kids.m3u8");
-x = x + 1
-showPack("nature", "Nature", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/nature.m3u8");
-x = x + 1
-showPack("podcasts", "Podcasts", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/podcasts.m3u8");
-x = x + 1
-showPack("livespace", "Space", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/space.m3u8");
-x = x + 1
-showPack("christ", "Christian Music", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/music/christian.m3u8");
-x = x + 1
-showPack("tbt", "Classic Music", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/music/classic.m3u8");
-x = x + 1
-showPack("popmusic", "Pop Music", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/music/pop.m3u8");
-x = x + 1
-showPack("rap", "Rap Music", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/music/rap.m3u8");
-x = x + 1
-showPack("secular", "Secular Music", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/entertainment/music/secular.m3u8");
-x = x + 1
-showPack("livenews", "Live News Package", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/news/live.m3u8");
-x = x + 1
-showPack("localnews", "Local News", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/news/local.m3u8");
-x = x + 1
-showPack("finance", "Money News", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/news/money.m3u8");
-x = x + 1
-showPack("technews", "Tech News", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/news/tech.m3u8");
-x = x + 1
-showPack("usnews", "US News", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/news/us.m3u8");
-x = x + 1
-showPack("worldnews", "World News", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/news/world.m3u8");
-x = x + 1
-showPack("sporttalk", "Sports Coverage", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/sports/coverage.m3u8");
-x = x + 1
-showPack("livesports", "Live Sports", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/sports/live.m3u8");
-x = x + 1
-showPack("sportsmarathon", "Sports Marathon", x, "https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/sports/marathon.m3u8");
-//x = x + 1
-function checkSize() {
-v = document.getElementsByTagName("iframe")
-if(window.pageYOffset > 180) {
-if(v[0]) {
-console.log(window.pageYOffset)
-v[0].id = "small"
-}
-}
-else {
-if(v[0]) {
-v[0].id = ""
-}
-}
-}
-setInterval(checkSize, 100)
-</script>
+
+<!-- Replace current .m3u8 and check..current file has access issue-->
