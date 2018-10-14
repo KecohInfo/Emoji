@@ -5,86 +5,9 @@
 <title>Random Post</title>
 <meta content='width=device-width, initial-scale=1' name='viewport'>
 <style>
-body {
-  background-color:transparent;
-  margin:0;
-  padding:0;
-  color:#333;
-  font-family:-apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif;
-}
-a {
-  text-decoration:none;
-  transition:all 400ms ease-in-out;
-}
-/* ==== Related Post Widget Start ==== */
-
-.related-post {
-  margin:0 auto;
-  height:1070px;
-  overflow:hidden;
-}
-.related-post h4 {
-  font-size:20px;
-  margin:0 5px 10px;
-  font-weight:500;
-}
-
-/* Style 2 */
-.related-post-style-2 {
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-.related-post-style-2 li {
-   display: block;
-   padding:0;
-    float: none;
-    overflow: hidden;
-    margin:0 0 8px;
-	list-style:none;
-}
-.related-post-style-2 li a:hover {color:#777}
-.related-post-style-2 .related-post-item-thumbnail {
-  width:168px;
-  height:100px;
-  max-width:none;
-  max-height:none;
-  background-color:transparent;
-  border:none;
-  padding:0;
-  float:left;
-  margin:0 8px 0 0;
-  transition:all 400ms ease-in-out;
-  position:relative;
-}
-.related-post-style-2 .related-post-item-thumbnail img {
-  width:100%;
-  height:100%;
-  max-width:none;
-  max-height:none;
-  background-color:transparent;
-  border:none;
-  display:block;
-}
-.related-post-style-2 .related-post-item-title {
-  font-weight:500;
-    display: block;
-    display: -webkit-box;
-	margin-top:-2px;
-	margin-bottom:5px;
-	line-height:1.1;
-}
-.related-post-style-2 .related-post-item-more,.related-post-style-2 .related-post-item-summary,.related-post-style-2 .related-post-item-more,.related-post-style-2 .related-post-item-summary a{
-  display:none;
-}
-.related-post-style-2 .related-post-item-thumbnail:after{content:"";cursor:pointer;margin:auto;width:56px;height:56px;background-image:url(https://1.bp.blogspot.com/-DpJGZ47Olck/WSkXyTDP1kI/AAAAAAAArQQ/UwIxH4hYRIkbgZkN0_mUrkK12HveGFsXACLcB/s1600/play.png);background-position:center;-webkit-background-size:48px 48px;background-size:48px 48px;position:absolute;top:0;bottom:0;left:0;right:0;opacity:0;transition:all 400ms ease-in-out;}
-.related-post-style-2 li:hover .related-post-item-thumbnail:after{opacity:.8}
-
-/* ==== Related Post Widget End ==== */
+body{background-color:transparent;margin:0;padding:0;color:#333;font-family:-apple-system,BlinkMacSystemFont,Roboto,"Segoe UI",Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif}a{text-decoration:none;transition:all .4s ease-in-out}.related-post{margin:0 auto;height:1070px;overflow:hidden}.related-post h4{font-size:20px;margin:0 5px 10px;font-weight:500}.related-post-style-2{margin:0;padding:0;list-style:none}.related-post-style-2 li{display:block;padding:0;float:none;overflow:hidden;margin:0 0 8px;list-style:none}.related-post-style-2 li a:hover{color:#777}.related-post-style-2 .related-post-item-thumbnail{width:168px;height:100px;max-width:none;max-height:none;background-color:transparent;border:none;padding:0;float:left;margin:0 8px 0 0;transition:all .4s ease-in-out;position:relative}.related-post-style-2 .related-post-item-thumbnail img{width:100%;height:100%;max-width:none;max-height:none;background-color:transparent;border:none;display:block}.related-post-style-2 .related-post-item-title{font-weight:500;display:block;display:-webkit-box;margin-top:-2px;margin-bottom:5px;line-height:1.1}.related-post-style-2 .related-post-item-more,.related-post-style-2 .related-post-item-summary,.related-post-style-2 .related-post-item-summary a{display:none}.related-post-style-2 .related-post-item-thumbnail:after{content:"";cursor:pointer;margin:auto;width:56px;height:56px;background-image:url(https://1.bp.blogspot.com/-DpJGZ47Olck/WSkXyTDP1kI/AAAAAAAArQQ/UwIxH4hYRIkbgZkN0_mUrkK12HveGFsXACLcB/s1600/play.png);background-position:center;-webkit-background-size:48px 48px;background-size:48px 48px;position:absolute;top:0;bottom:0;left:0;right:0;opacity:0;transition:all .4s ease-in-out}.related-post-style-2 li:hover .related-post-item-thumbnail:after{opacity:.8}
 </style>
-</head>
-<body>
-
+</head><body>
 <div id="related-post" class="related-post"></div>
 <script>
 function getQueryVariable(variable) {
