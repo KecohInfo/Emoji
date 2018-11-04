@@ -1,0 +1,8 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>eKecoh</ShortName>
+    <Description>eKecoh Search</Description>
+    <Url type="text/html" method="get" template="https://www.ekecoh.com/search?q={searchTerms}&amp;utm_source=ops&amp;utm_medium=wb&amp;utm_campaign=OpenSearch"/>
+    <Image width="16" height="16">https://www.ekecoh.com/favicon.ico</Image>
+    <InputEncoding>UTF-8</InputEncoding>
+    <moz:SearchForm>https://www.ekecoh.com</moz:SearchForm>
+</OpenSearchDescription>
