@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Roboto,"Segoe UI",Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif}button#copy{box-sizing:border-box;font:inherit;font-size:14px;font-weight:500;line-height:1.2;border:2px solid transparent;background:#555;padding:0;text-align:center;color:#fff;display:block;cursor:copy;width:100vw;height:100vh}button#copy:active,button#copy:focus{outline:0;border-color:#ff0}#copy svg{width:18px;height:18px;vertical-align:middle}#copy svg path{fill:#fff}</style>
+</head>
+<body>
+<button id="copy"><svg width="24px" height="24px" viewBox="0 0 24 24"><path fill="#000000" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg></button>
+<input type="text" id="_i" hidden />
+<script>
+copy.onclick=function(){_i.value=window.decodeURIComponent(window.location.hash.substr(1)),_i.hidden=!1,_i.select(),_i.focus(),document.execCommand("copy"),_i.hidden=!0,_i.value=""};
+</script>
+</body>
